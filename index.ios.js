@@ -38,7 +38,6 @@ class Publisher extends React.Component {
     const dimensions = Dimensions.get('window')
     const { width, height } = dimensions
 
-    console.log(width, height)
     return (
       <View style={{ flex: 1, flexDirection: 'column' }}>
         <View style={ styles.header }>
@@ -47,7 +46,11 @@ class Publisher extends React.Component {
             about={ "It's electric".toUpperCase() }
             avatar={ "http://educateinspirechange.org/wp-content/uploads/2015/07/znameniti-srbi.jpg" } />
         </View>
-        <Carousel width={ width }>
+        <Carousel 
+          width={ width } 
+          indicatorColor={ '#bbb' } 
+          inactiveIndicatorColor={ 'white' }
+          indicatorSize={ 30 }>
           { 
             cards.map((card, i) => (
               <View key={ i } style={styles.imgContainer}>
