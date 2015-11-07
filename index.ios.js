@@ -5,9 +5,9 @@
 'use strict';
 
 import React from 'react-native'
-import Carousel from './carousel'
 import Dimensions from 'Dimensions'
-import Author from './author'
+import Carousel from './Carousel.ios'
+import Author from './Author.ios'
 
 const {
   AppRegistry,
@@ -57,7 +57,7 @@ class Publisher extends React.Component {
                 <Image 
                  source={card.image} 
                  style={[ styles.img, { width: width, height: height * 0.7 }]}>
-                 
+                 <Text style={ styles.text }>{ card.title }</Text>
                 </Image>
               </View>
             ))
@@ -69,8 +69,6 @@ class Publisher extends React.Component {
     )
   }
 }
-
-//<Text style={ styles.text }>{ card.title }</Text>
 
 var styles = StyleSheet.create({
   viewport: {
